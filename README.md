@@ -1,3 +1,5 @@
+
+
 1. AWS에서 Ubuntu로 서버를 하나 생성한다.
 2. 만든 서버 내에 JDK, maven, tomcat을 설치한다.
 3. git clone을 이용해 TodoList를 서버에 받는다.
