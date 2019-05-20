@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+				 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.summer.submit.mapper.TodoMapper">
+
+	<select id="getAll" resultType="todo">
+		select * from list order by priority asc
+	</select>
+	
+	<insert id="add" parameterType="todo">
+		INSERT INTO list (TITLE, CONTENT, DEADLINE, PRIORITY)
+		VALUES(#{title}, #{content}, #{deadline}, #{priority})
+	</insert>
+	
+	<select id="getByNum" parameterType="int" resultType="todo">
+		SELECT * FROM list 
+		WHERE NUM = #{num}
+	</select>
+	
+	<update id="update" parameterType="todo">
+		UPDATE list SET TITLE = #{title}, CONTENT = #{content}, DEADLINE = #{deadline}
+		, PRIORITY = #{priority}, FINISH = #{finish}
+		WHERE NUM = #{num}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM list
+		WHERE NUM = #{num}
+	</delete>
+
+</mapper>
