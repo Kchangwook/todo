@@ -9,7 +9,7 @@ Summer Coding
 7. tomcat/webapps/ROOT이라는 이름의 폴더를 삭제
 8. TodoList/target의 안에 있는 Submit-SNAPSHOT이라는 폴더를 tomcat/webapps 폴더 내에 ROOT라는  이름으로 변경해 이동
 9. sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080 <br>
-   sudo service iptables save <br>
-   sudo service iptables reload <br>
+   sudo netfilter-persistent save<br>
+   sudo netfilter-persistent reload<br>
    라는 명령어로 포트포워딩을 통해 80번 포트로 들어오는 요청을 8080포트로 전송
 10. tomcat/bin 내의 startup.sh를 실행시킴으로서 서버를 통해 배포
